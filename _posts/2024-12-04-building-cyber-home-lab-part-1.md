@@ -59,9 +59,10 @@ Before installing Proxmox we need to make sure virtualization is enabled on the 
 
 ![system-picture](/images/homelab-guide/part1/windows-taskmanager.png)
 If for whatever reason you do not have virtualization enabled, then you will need to enabled as it is disabled in the BIOS. If you do not see virtualization at all, you are out of luck and your system does not support it. There many flavors of BIOS's that I cannot cover so instead I will link below some resources on how to enable your Virtualization through your BIOS! 
-
-> [!INFO] Virtualization Tip 
-> I always found googling my motherboard name + virutalization does the trick in finding a guide.
+ 
+> Virutalization Tip  
+> Researching with  motherboard name + virutalization does the trick in finding a guide.
+{: .prompt-info }
 
 [Enabling CPU Virutalization by ninjaOne](https://www.ninjaone.com/blog/how-to-enable-cpu-virtualization-in-your-computer-bios/)
 
@@ -139,11 +140,17 @@ After all is set and done. Click Apply Configuration and we are ready to move on
 
 ## pfSense Setup
 ### Downloading pfSense
+Download here: [pfSense ISO Download](https://sgpfiles.netgate.com/mirror/downloads/)  
+As of this time, the latest version of pfSense is **`2.7.2`**  
+For best results, download the file named: **`pfSense-CE-2.7.2-RELEASE-amd64.iso.gz`**  
+
+> **pfSense Changes**  
+> The offical pfSense is requiring registration before downloading their offical ISO image. The link I have provided above will circumvent the regisitration by downloading directly from the mirror. Mildly annoying but thankfully their are workarounds.
+{: .prompt-info }
+
 ![pfSenseISO](/images/homelab-guide/part1/pfSense-ISO.png)
 
-Before we create the VM, we want to either upload or Download the ISO Image to our storage to use. For me, I will be uploading my ISO Image into ISO (Darla) but yours will be different, most likely if you are running default it will be something like "storage".
-
-[pfSense ISO Download](https://sgpfiles.netgate.com/mirror/downloads/)
+Before we create the VM, we want to either upload or Download the ISO Image to our storage to use. For me, I will be uploading my ISO Image into ISO (Darla) but yours will be different, most likely if you are running default it will be something like **`storage`**.
 
 ### Creating pfSense VM
 Let's create the VM! Click on Create VM in the Top Right.
