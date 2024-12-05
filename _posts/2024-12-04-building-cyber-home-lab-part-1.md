@@ -11,7 +11,7 @@ published: true
 
 Welcome! In this project, we will be setting a Cybersecurity Home Lab using the Open Source Hypervisor Proxmox. I was originally going to do ESXI and Virtualbox but after what Broadcom did to their customers and the community, I decided to go another route. That's where I found proxmox and after hours of frustration and tears I finally grasped it! 
 
-That being said, I currently have Proxmox running natively on a separate system (specifications below) that I have built for a homelab. I strongly recommend you do the same as Proxmox is a Type 1 Hypervisor and works best when its installed as the OS.
+I currently have Proxmox running natively on a separate system (specifications below) that I have built for a homelab. I strongly recommend you do the same as Proxmox is a Type 1 Hypervisor and works best when its installed as the OS.
 
 Throughout the entire project, I will be posting modules instead of one giant post to make it easier to follow along. The modules will consist of a different component of the lab that we will set up together.
 
@@ -55,7 +55,7 @@ With that being said, I want to give a couple of shoutouts to the following Home
 - For PCI(e) passthrough a CPU with VT-d/AMD-d CPU flag is needed.
 
 ## Enabling Virtualization
-Before installing Proxmox we need to make sure virtualization is enabled on the system.On Windows this can be checked by opening up Task Manager -> Performance and checking if Virtualization is set to Enabled.
+Before installing Proxmox we need to make sure virtualization is enabled on the system.On Windows this can be checked by opening up Task Manager, clicking the  Performance tab and checking if Virtualization is set to Enabled.
 
 ![system-picture](/images/homelab-guide/part1/windows-taskmanager.png)
 If for whatever reason you do not have virtualization enabled, then you will need to enabled as it is disabled in the BIOS. If you do not see virtualization at all, you are out of luck and your system does not support it. There many flavors of BIOS's that I cannot cover so instead I will link below some resources on how to enable your Virtualization through your BIOS! 
@@ -72,7 +72,7 @@ You can download it from this link: [Proxmox VE 8.3 ISO Installer](https://www.p
 
 Now that we have the ISO image, you will need a usb thumb drive with at least 5GB of space and make sure to remove any information off of it because we will be making it a bootable drive. I used [Rufus](https://rufus.ie/en/) to burn the ISO onto the usb drive.
 
-Lastly, I will not go step by step through the proxmox setup because Craft Computing made an amazing video explaining it that I would not be able to create anything nearly as helpful. With that being said please watch his video! 
+Lastly, I will not go step by step through the proxmox setup because Craft Computing made an amazing video walkthrough that would put mine to shame. Please watch his video! 
 
 [Craft Computing Proxmox Setup](https://www.youtube.com/watch?v=sZcOlW-DwrU&t=334s)
 
@@ -88,7 +88,6 @@ apt update
 
 > [!IMPORTANT]  Errors
 > Most likely you will get an error saying something like "updating from repo can't be done securely" this is due to not having a valid subscription.
-> 
 >Below I will link a video going over this issue and a link to Proxmox Documentation on switching over to the No-Subscription Repository
 
 
@@ -100,10 +99,10 @@ apt update
 apt install openvswitch-switch
 ```
 ## VLAN Configuration
-Once it finished installing, we are good to set up our bridges and VLANs! First we will do our linux bridge that will act as the lan.
-![linuxbridge](/images/homelab-guide/part1/linuxbridge.png)
 
-Once we click linux bridge we will be presented with the window below.
+![linuxbridge](/images/homelab-guide/part1/linuxbridge.png)
+Once it finished installing, we are good to set up our bridges and VLANs! First we will do our linux bridge that will act as the Lan. Once we click linux bridge we will be presented with the window below.
+
 
 ![lab-lan-bridge](/images/homelab-guide/part1/labLanBridge.png)
 
