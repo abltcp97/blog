@@ -11,12 +11,12 @@ published: true
 
 Welcome! In this project, we will be setting a Cybersecurity Home Lab using the Open Source Hypervisor Proxmox. I was originally going to do ESXI and Virtualbox but after what Broadcom did to their customers and the community, I decided to go another route. That's where I found proxmox and after hours of frustration and tears I finally grasped it! 
 
-I currently have Proxmox running natively on a separate system (specifications below) that I have built for a homelab. I strongly recommend you do the same as Proxmox is a Type 1 Hypervisor and works best when its installed as the OS.
+I currently have Proxmox running natively on a separate system (specifications below) that I have built for a homelab. I strongly recommend you do the same as Proxmox is a Type 1 Hypervisor and works optimally when its installed natively.
 
-Throughout the entire project, I will be posting modules instead of one giant post to make it easier to follow along. The modules will consist of a different component of the lab that we will set up together.
+Throughout the entire project, I will be posting modules instead of one giant post to make it easier to follow along. Each module will encompass one part of the home lab.
 
 ## Shoutouts
-With that being said, I want to give a couple of shoutouts to the following Home Lab guides that helped me create my personal homelab and inspired me to create my own:
+Before we dive right in, I want to give a few shoutouts to the people below and their guides. They helped me tremendously when I first created my homelab. You guys are awesome!  
 - [Building Blue Team Home Lab Part 1 - Introduction \| facyber](https://facyber.me/posts/blue-team-lab-guide-part-1/)
 
 - [Building a Virtual Security Home Lab: Part 1 - Network Topology \| David Varghese](https://blog.davidvarghese.net/posts/building-home-lab-part-1/)
@@ -35,6 +35,9 @@ With that being said, I want to give a couple of shoutouts to the following Home
 
 ![network-diagram](/images/homelab-guide/diagrams/network-diagram.svg)
 
+> pfSense will act as our router in this lab. Before opening up any other VMs, make sure pfSense is running otherwise you will have no internet access.  
+{: .prompt-info }
+  
 ## My Hardware
 ![system-picture](/images/homelab-guide/part1/mysystem.JPG)
 - <b>Case</b>: Fractual Node 804
@@ -60,9 +63,6 @@ Before installing Proxmox we need to make sure virtualization is enabled on the 
 ![system-picture](/images/homelab-guide/part1/windows-taskmanager.png)
 If for whatever reason you do not have virtualization enabled, then you will need to enabled as it is disabled in the BIOS. If you do not see virtualization at all, you are out of luck and your system does not support it. There many flavors of BIOS's that I cannot cover so instead I will link below some resources on how to enable your Virtualization through your BIOS! 
  
-> Virutalization Tip  
-> Researching with  motherboard name + virutalization does the trick in finding a guide.
-{: .prompt-info }
 
 [Enabling CPU Virutalization by ninjaOne](https://www.ninjaone.com/blog/how-to-enable-cpu-virtualization-in-your-computer-bios/)
 
@@ -87,14 +87,13 @@ Let's run an update command because why not.
 apt update
 ```
 
-> [!IMPORTANT]  Errors
-> Most likely you will get an error saying something like "updating from repo can't be done securely" this is due to not having a valid subscription.
->Below I will link a video going over this issue and a link to Proxmox Documentation on switching over to the No-Subscription Repository
+> **Proxmox No Subscription Repository**    
+> If you encounter an error saying along the lines of :**`updating from repo cannot be done securely`** This is because the default repository is Enterprise. You will need to switch to the **`No Subscription Repository`**. <br>    
+> Link to Video Resource: [No Subscription Repository Video](https://www.youtube.com/watch?v=DzHRhu3On7o)   
+> Link to Proxmox Documentation: [Package Repositories](https://pve.proxmox.com/wiki/Package_Repositories)  
+{: .prompt-info }
 
 
-[Proxmox Update No Subscription Repository Video](https://www.youtube.com/watch?v=DzHRhu3On7o)
-
-[Package Repositories](https://pve.proxmox.com/wiki/Package_Repositories)
 
 ```bash
 apt install openvswitch-switch
@@ -124,7 +123,11 @@ Let's go ahead and create our VLANs using the OVS IntPort.
 
 ![vlans](/images/homelab-guide/part1/VLAN-IntPort.png)
 
-We will be having four total VLANs. You can choose how to name each one but I will keep it simple and do 10,20,30,40. The process is the same for each one. Give it a name, set the Bridge to be the our VLAN Interface (vmbr2), give it an IP, and give it a tag. You can also add a comment as well. I actually went back later and added this. I referred to the network diagram and left a comment corresponding to what I designated each vlan for.
+We will be having four total VLANs. You can choose how to name each one but I will keep it simple and do 10,20,30,40. The process is the same for each one.  
+
+Give it a name, set the Bridge to be the our VLAN Interface (vmbr2), give it an IP, and give it a tag. You can also add a comment as well. I actually went back later and added this. I referred to the network diagram and left a comment corresponding to what I designated each vlan for.  
+
+Example: **Comment: Security**
 
 After creating the Vlans you should have something like this.
 
@@ -144,7 +147,7 @@ Download here: [pfSense ISO Download](https://sgpfiles.netgate.com/mirror/downlo
 As of this time, the latest version of pfSense is **`2.7.2`**  
 For best results, download the file named: **`pfSense-CE-2.7.2-RELEASE-amd64.iso.gz`**  
 
-> **pfSense Changes**  
+> **pfSense ISO Changes**  
 > The offical pfSense is requiring registration before downloading their offical ISO image. The link I have provided above will circumvent the regisitration by downloading directly from the mirror. Mildly annoying but thankfully their are workarounds.
 {: .prompt-info }
 
@@ -254,8 +257,8 @@ We will set up OPT1 in the pfSense interface so don't worry if it doesn't have a
 ### Configuring LAN (vtnet1)
  Personally, I do not need to configure the lan as this is the ip address I want to use, however for those using a 10.10.x.x or another ip scheme I will go over it!
 
-> [!INFO]
-> Your WAN will have an IP assigned by your DHCP server, I blocked out mine for security reasons.
+> Your WAN will have an IP assigned by your DHCP server, I blocked out mine because I'm shy.
+{: .prompt-warning }
 
 ![pfsense-installation-13](/images/homelab-guide/part1/pfsense-installation14.png)
 
