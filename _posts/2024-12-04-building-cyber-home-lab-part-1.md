@@ -2,8 +2,8 @@
 title: "Building a CyberSecurity Home Lab with Proxmox: Part 1 - Network and pfSense Setup"
 description: A Guide on Building a Cybersecurity Home Lab using Proxmox
 date: 2024-12-5 15:00:00 -0800
-categories: [cybersecurity, homelab]
-tags: [homelab,security,proxmox,networking]     # TAG names should always be lowercase
+categories: [Security,Home Lab]
+tags: [homelab,security,proxmox,]     # TAG names should always be lowercase
 published: true
 ---
 
