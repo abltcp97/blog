@@ -7,7 +7,9 @@ tags: [homelab,security,proxmox,]     # TAG names should always be lowercase
 published: true
 ---
 
-![network-diagram](/images/homelab-guide/diagrams/Front%20Banner%20Logo.png)
+![title-banner](/images/homelab-guide/diagrams/Front%20Banner%20Logo.png)
+
+Banner Background by [AndreaCharlesta](https://www.freepik.com/free-vector/background-wave-gradient-minimalist-style_73392382.htm#fromView=image_search_similar&page=2&position=32&uuid=071173e2-ea25-4619-8e4f-8b709eabb291)  
 
 Welcome! In this project, we will be setting a Cybersecurity Home Lab using the Open Source Hypervisor Proxmox. I was originally going to do ESXI and Virtualbox but after what Broadcom did to their customers and the community, I decided to go another route. That's where I found proxmox and after hours of frustration and tears I finally grasped it! 
 
@@ -291,7 +293,7 @@ Doesn't hurt to clean up your environment a bit. After shutting down navigate to
 
 Select **``CD/DVD Drive``** and click Remove. This will remove the ISO image from the VM as it is no longer needed. Feel free to remove pfSense ISO image from your storage drive if you want the extra space.
 
-Keep an Eye out for the next part where we will set up Kali Linux and start configuring the Firewall on pfSense.
+Keep an eye out for the next part where we will set up Kali Linux and start configuring the Firewall on pfSense.
  
 
 
