@@ -4,27 +4,11 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-## 📖 About Me
-
 - 🔐  Aspiring Security Engineer with big dreams
 - 💻 Currently working as an MDM Administrator
 - 🎓 Bachelor's Computer Science and Engineering from University of California, Merced, Class of 2021
 - 🧗🏻 I enjoy rock climbing, trying new foods, and creating homelabs
 - Check out my blog at [Memory Leak](https://blog.aalamillo.com)
-
-## 📜 Random Quote of the Day
-
-<!-- https://github.com/PiyushSuthar/github-readme-quotes -->
-
-<a href="https://github.com/piyushsuthar/github-readme-quotes">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Quote">
-</a>
-
-## 🔨 Language and Tools:
-![Languages](https://skillicons.dev/icons?i=py,html,css,docker,git,github)
-
-![Tools](https://skillicons.dev/icons?i=vscode,azure,ubuntu,kali,windows,apple,)
-
 
 ## 📬 How to reach me:
 
