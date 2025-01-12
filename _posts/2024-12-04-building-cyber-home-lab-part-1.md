@@ -11,6 +11,13 @@ published: true
 
 Banner Background by [AndreaCharlesta](https://www.freepik.com/free-vector/background-wave-gradient-minimalist-style_73392382.htm#fromView=image_search_similar&page=2&position=32&uuid=071173e2-ea25-4619-8e4f-8b709eabb291)  
 
+> **Changelog**
+> - **January 12, 2025**
+>   - Updated Network Diagram with changes to the AD Lab. Splunk has been switched out for Windows 10 Machine.
+>   - Changes to Security lab. I have switched out Limacharlie for Security Onion and moved Splunk over.
+{: .prompt-tip }
+
+
 Welcome! In this project, we will be setting a Cybersecurity Home Lab using the Open Source Hypervisor Proxmox. I was originally going to do ESXI and Virtualbox but after what Broadcom did to their customers and the community, I decided to go another route. That's where I found proxmox and after hours of frustration and tears I finally grasped it! 
 
 I currently have Proxmox running natively on a separate system (specifications below) that I have built for a homelab. I strongly recommend you do the same as Proxmox is a Type 1 Hypervisor and works optimally when its installed natively.
@@ -35,7 +42,7 @@ Before we dive right in, I want to give a few shoutouts to the people below and 
 - Sandbox (Capture the Flag Practice)
 - Malware Lab (Linux and Windows)
 
-![network-diagram](/images/homelab-guide/diagrams/network-diagram.svg)
+![network-diagram](/images/homelab-guide/diagrams/network-diagram_.svg)
 
 > pfSense will act as our router in this lab. Before opening up any other VMs, make sure pfSense is running otherwise you will have no internet access.  
 {: .prompt-info }
