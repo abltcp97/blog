@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Building a CyberSecurity Home Lab with Proxmox: Part 4 - Cyber Sandbox Setup'
-date: 2025-01-01 13:21 -0800
+date: 2025-01-10 13:21 -0800
 description: A Guide on Building a Cybersecurity Home Lab using Proxmox
 categories: [Security,Home Lab]
 tags: [homelab,security,proxmox,linux,networking]
