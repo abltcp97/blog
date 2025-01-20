@@ -71,8 +71,6 @@ Make sure everything looks good. Click **`Confirm`**.
 
 Head over to **Options** -> **Boot Order**. Make sure it matches mine. Boot up the VM afterwards.
 
-![](/images/homelab-guide/part5/vm-setup-10.png)
-
 ## Windows Server Installation
 
 ![windows-1](/images/homelab-guide/part5/windows-setup-1.png)
