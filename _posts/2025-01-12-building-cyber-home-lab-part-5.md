@@ -5,7 +5,6 @@ description: A Guide on Building a Cybersecurity Home Lab using Proxmox
 date: 2025-01-19 13:20 -0800
 categories: [Security,Home Lab]
 tags: [homelab,security,proxmox,]
-media_subpath: /images/homelab-guide/part5/
 ---
 
 ![title](/images/homelab-guide/diagrams/front-banner-part5.png)
