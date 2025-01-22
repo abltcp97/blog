@@ -15,19 +15,19 @@ Welcome back! I hope everyone is having a great beginning to their year. I want 
 
 You are more than welcome to run this Active Directory lab with just one Windows 10 client and it will work just fine. I am running it with two because there are certain payloads/attacks that require two client machine, one such being NTLM Relay Attack. We will also be setting up snapshots to revert back to a state before any attacks. This helps make our lives easier by not having to remake the VMs after each attack.
 
-> Microsoft Evaluation Trial Period
+> **Microsoft Evaluation Trial Period**  
 > Don't worry about this, Microsoft gives a trial license of x amount of times depending on the OS. It will function completely fine after the trial period is over.
 {: .prompt-info }
 
 ## Windows ISO Downloads
 
-**Windows Server 2022 (64-bit):** https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US
+**Windows Server 2022 (64-bit):** [Click Here](https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US)
 
-**Windows 10 Enterprise (64-bit):** https://go.microsoft.com/fwlink/p/?LinkID=2208844&clcid=0x409&culture=en-us&country=US
+**Windows 10 Enterprise (64-bit):** [Click Here](https://go.microsoft.com/fwlink/p/?LinkID=2208844&clcid=0x409&culture=en-us&country=US)
 
-**VirtIO Download**: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+**VirtIO Download**: [Click Here](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso)
 
-> VirtIO Drivers
+> **VirtIO Drivers**  
 > We will need VirtIO drivers for our Windows VM otherwise it will not run on proxmox. Download it normally like you would any ISOs. I will be using the **`Stable virtio-win ISO`** which is what I linked above.  
 {: .prompt-info}
 
