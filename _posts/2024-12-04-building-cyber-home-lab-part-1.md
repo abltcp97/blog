@@ -42,7 +42,7 @@ Before we dive right in, I want to give a few shoutouts to the people below and 
 - Sandbox (Capture the Flag Practice)
 - Malware Lab (Linux and Windows)
 
-![network-diagram](/images/homelab-guide/diagrams/network-diagram_.svg)
+![network-diagram](/images/homelab-guide/diagrams/network-diagram-2025.svg)
 
 > pfSense will act as our router in this lab. Before opening up any other VMs, make sure pfSense is running otherwise you will have no internet access.  
 {: .prompt-info }
