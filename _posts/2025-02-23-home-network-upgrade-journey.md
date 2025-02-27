@@ -15,7 +15,7 @@ Welcome back! I apologize for disappearing on everyone. I had some major things 
 This post deviates from my routine home lab series because I performed a massive upgrade to my home network, which consumed a lot of my time in addition to the grieving process. Before diving back into my home lab series, I wanted to showcase my new, shiny upgrades and the skills I’ve learned.
 
 
-![Home-Network-Diagram|200](Home-Network-Diagram.svg)
+![Home-Network-Diagram](Home-Network-Diagram.svg)
 
 Here's a diagram of my upgraded network! I will go more in-depth about each section later in this blog.
 
@@ -39,11 +39,11 @@ Once I settled on a firewall, I needed to find the hardware to host it. I also f
 ## Firewall Upgrade
 After extensive research, I opted to purchase the Protectli VP2420 to house OPNsense. I have to say, the build quality of the VP2420 is amazing—it feels premium with its dark gray, powder-coated texture. The fanless design makes it silent, although it does get a bit toasty to the touch, but that’s nothing to worry about.
 
-![VP2420_front|200](VP2420_front.png)
+![VP2420_front](VP2420_front.png)
 
-![VP2420_back|200](VP2420_back.png)
+![VP2420_back](VP2420_back.jpg)
 
-![VP2420_inside|200](VP2420_inside.png)
+![VP2420_inside](VP2420_inside.jpg)
 
 When you open it up, you can see it has upgradeable RAM and storage. I chose the barebones model that came with no memory or storage and purchased a single DIMM of Crucial 16 GB RAM and a 1 TB M.2 SSD off Amazon. While Protectli does offer the option to add RAM and storage, I found it more cost-effective to buy them separately. Below are the hardware specifications for anyone interested:
 
@@ -58,14 +58,14 @@ When you open it up, you can see it has upgradeable RAM and storage. I chose the
 ## Managed Switch Upgrade 
 After a couple of hours of research, I quickly settled on the UniFi Lite 16-Port PoE Switch by Ubiquiti. What really sold me was its user interface and performance. UniFi consistently ranks high for home network setups. Although it’s a bit expensive, it was worth the price for a premium product.
 
-![unifi-switch|200](unifi-switch.png)
+![unifi-switch](unifi-switch.png)
 
 
-![port-manager.png|200](port-manager.png)
+![port-manager.png](port-manager.png)
 
 The main features I was looking for when I found this switch was PoE for Access Point, Port Management and VLAN Support. The unifi switch met all the demands and more! The UI is capable and easy to navigate.
 
-> Note: If you choose to run a unifi switch with a 3rd party gateway. You will need to self-host the unifi controller somewhere in your network. I did it on my home lab server by spinning up an Ubuntu VM.   
+> **Note:** If you choose to run a unifi switch with a 3rd party gateway. You will need to self-host the unifi controller somewhere in your network. I did it on my home lab server by spinning up an Ubuntu VM.   
 {: .prompt-info }
 
 ## WiFi AP Upgrade
@@ -83,16 +83,16 @@ Setting up the Unifi U6 Pro was straightforward:
 
 - **Configuration:** Setting up the Unifi Controller wasn't too hard of a task. I found a docker compose file by [jacobalberty](https://github.com/AmIBeingObtuse/Youtubestacks/blob/6423c9864723bb740e648326163813fcee35655f/unifi-controller-docker). I popped this into Dockge and quickly spun up the Unifi Controller instance. Initial Configuration was a breeze. I quickly configured all the SSIDs and applied VLANs without a sweat!
 
-![AP-Mounted|200](AP-Mounted.png)
+![AP-Mounted](AP-Mounted.png)
 
-> Scalability  
+> **Scalability:**  
 > Unifi APs are amazing at creating a mesh network. If/When I move into a bigger house I will be purchashing more Unifi APs around the house for the mesh network. Something to consider if you want room for future expansion.  
 {: .prompt-info }
 
 ## Network Diagram & VLAN Configuration
 Returning to the network diagram at the beginning of this post, it provides a bird’s-eye view of my new home network. Here, I break down the different VLANs and briefly discuss the devices assigned to each VLAN, as well as my firewall and Pi-hole DNS server. 
 
-> Note: The diagram also shows virtualized VMs and Docker instances, which I won’t cover in this post since it focuses mainly on the network.)
+> **Note:** The diagram also shows virtualized VMs and Docker instances, which I won’t cover in this post since it focuses mainly on the network.)
 {: .prompt-info}
 ### VLAN Breakdown
 - VLAN 1 (LAN): Managment: Self explanatory. This is where the network management devices live. My homelab server, DNS server, Network switch etc.
@@ -104,14 +104,14 @@ Returning to the network diagram at the beginning of this post, it provides a bi
 ## Firewall Configuration
 Setting up the firewall rules for each VLAN was a bit tricky at first understanding OPNSense's UI but after some research it was a breeze. I set up base rules on each VLAN as shown below.
 
-![base-firewall-rules|200](base-firewall-rules.png)
+![base-firewall-rules](base-firewall-rules.png)
 
 These basic rules allow for all private networks to access the internet and allow access to my DNS server which is the pihole's IP Address. I have exceptions rules that allow VLANS to communicate with a device in another vlan. For example, I have a minecraft server in the DMZ VLAN that I want to be accessible to the HOME and GUEST VLAN. I made a firewall rules to allow any device on the HOME and GUEST VLAN to access the IP of the server on port 25565. As I am slowly building up my home network I will add exceptions when needed. Another one coming soon might be a plex server!
 
 ## Pi-Hole Integration
 I have my pihole running on a raspberry pi and have it set as my primary DNS server and DNS Sinkhole. This acts as a network wide ad blocker improving my broswer speeds and reducing exposure to those malicious and pesky ads on the internet. This works all across my VLANs because I have to share the love. I configured on my firewall to route all DNS queries from Unbound to the pi-hole. The pi-hole UI is interactive and shows me in real time the DNS queries that were allowed and blocked. It also brings into percepstive how many api calls the IoT devices execute on a daily basis. Below is screenshot and you can see what I mean.
 
-![dns-queries|200](dns-queries.png)
+![dns-queries](dns-queries.png)
 
 Easily, the Pi-hole is one of my best upgrades to my home network. The reduced ad blocking on the network is just amazing, I would highly recommend everyone do this as a project. It helped me get hands on learning with networking,solidified my knowledge about DNS and I learned how to set up a Dynamic DNS using cloudflare and docker.
 
