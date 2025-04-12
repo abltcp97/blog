@@ -5,9 +5,15 @@ Welcome to **Memory Leak**, a blog dedicated to cybersecurity, home lab guides, 
 This blog is a space where I document my journey, projects, and insights, focusing on hands-on labs, guides, and walkthroughs for aspiring cybersecurity enthusiasts and professionals.
 
 ## 🔍 About the Blog
-Currently, the blog features:
-- **Part 1: Building a Cyber Home Lab**  
-  A step-by-step guide on setting up your own cyber home lab. This post covers the foundational setup, including the use of virtualization platforms and tools like Proxmox, pfSense, and Kali Linux. It’s designed to help you create a sandbox environment for learning and practicing cybersecurity concepts.
+Currently, the most recent blog posts:
+<!-- https://github.com/gautamkrishnar/blog-post-workflow -->
+<!-- BLOG-POST-LIST:START -->
+- [Home Network Upgrade Journey](https://blog.aalamillo.com/posts/home-network-upgrade-journey/)
+- [Building a CyberSecurity Home Lab with Proxmox: Part 6 - Active Directory Lab Setup - Part 2](https://blog.aalamillo.com/posts/building-cyber-home-lab-part-6/)
+- [Building a CyberSecurity Home Lab with Proxmox: Part 5 - Active Directory Lab Setup - Part 1](https://blog.aalamillo.com/posts/building-cyber-home-lab-part-5/)
+- [Building a CyberSecurity Home Lab with Proxmox: Part 4 - Cyber Sandbox Setup](https://blog.aalamillo.com/posts/building-cyber-home-lab-part-4/)
+- [Building a CyberSecurity Home Lab with Proxmox: Part 3 - Firewall Configuration](https://blog.aalamillo.com/posts/building-cyber-home-lab-part-3/)
+<!-- BLOG-POST-LIST:END -->
 
 More content, including advanced topics and additional parts, will be added soon! Stay tuned for updates.
 
